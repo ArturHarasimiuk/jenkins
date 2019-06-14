@@ -65,6 +65,7 @@ public class CoreEnvironmentContributor extends EnvironmentContributor {
             Node n = e.getOwner().getNode();
             if (n != null)
                 env.put("NODE_LABELS", Util.join(n.getAssignedLabels(), " "));
+            env.put("EXECUTOR_COUNT", String.valueOf(e.getOwner().countExecutors()));
         }
     }
 }
